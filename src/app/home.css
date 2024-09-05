@@ -1,4 +1,49 @@
 /* home.css */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    /* Ensures the text is clipped */
+    border-right: .15em solid white;
+    /* The caret */
+    white-space: nowrap;
+    /* Keeps the text on a single line */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 html,
 body {
     margin: 0;
@@ -10,7 +55,7 @@ body {
 
 .navbar {
     width: 100%;
-    background-color: #333;
+    background-color: white;
     color: white;
     padding: 1rem;
     position: fixed;
@@ -28,7 +73,7 @@ body {
 }
 
 .navbar-link {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -38,8 +83,9 @@ body {
     background-color: #396d52;
     /* Tailwind's green-500 */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2rem;
     padding-top: 5rem;
     /* Add padding to avoid overlap with fixed navbar */
@@ -49,21 +95,50 @@ body {
     color: white;
     font-size: 2.5rem;
     font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
 }
 
+.description {
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    /*animation: fadeIn 2s ease-in-out;*/
+    /* Delay the animation by 1 second */
+}
 
+.animationt {
+    animation: fadeIn 2s ease-in-out;
+}
 
-.image-placeholder {
-    width: 8rem;
-    height: 8rem;
-    background-color: #d1d5db;
-    /* Tailwind's gray-300 */
+.image-container {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.image-circle {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+    /* Glowing effect */
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.image-placeholder span {
-    color: #4b5563;
-    /* Tailwind's gray-700 */
+.text-container {
+    margin-right: 2rem;
 }
