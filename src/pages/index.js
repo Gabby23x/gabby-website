@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Navbar from "./navbar";
-import "./home.css"; // Import the CSS file
-
+import Navbar from "../app/navbar"; // Update the path to Navbar
+import "../app/home.css"; // Update the path to the CSS file
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
       <Navbar /> {/* Add the Navbar component here */}
       <div className="content">
         <div className="text-container">
-          <p className="description animationt" >Hello I am</p>
+          <p className="description animationt">Hello I am</p>
           <h1 className="title">Gabrielle Loncke (Gabby)</h1>
           <p className="description typing-effect">
             A passionate CS and Game Dev Student<br />
